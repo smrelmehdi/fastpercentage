@@ -5,8 +5,9 @@ import IncreaseCalculator from "@/components/IncreaseCalculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
 export const metadata: Metadata = createMetadata({
-  title: "Percentage Increase Calculator | FastPercentage",
-  description: "Calculate percentage increase between two values instantly.",
+  title: "Percentage Increase Calculator – Calculate % Increase Online",
+  description:
+    "Free percentage increase calculator. Enter two values and instantly find the % increase between them. Formula: ((New − Old) ÷ Old) × 100. Fast and accurate.",
   path: "/percentage-increase",
 });
 
@@ -25,11 +26,48 @@ const faqs = [
     q: "How do you calculate increase from two values?",
     a: "Subtract the original value from the new value, divide by the original value, then multiply by 100.",
   },
+  {
+    q: "What is the formula for percentage increase?",
+    a: "The formula is: Percentage Increase = ((New Value − Original Value) ÷ Original Value) × 100.",
+  },
+  {
+    q: "Can percentage increase be more than 100%?",
+    a: "Yes. If a value doubles, that is a 100% increase. If it triples, that is a 200% increase. There is no upper limit.",
+  },
+  {
+    q: "What is the difference between percentage increase and percentage points?",
+    a: "Percentage increase is relative to the original value. Percentage points measure the absolute difference. Going from 10% to 15% is 5 percentage points, but a 50% relative increase.",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://fastpercentage.online" },
+      { "@type": "ListItem", position: 2, name: "Percentage Increase Calculator", item: "https://fastpercentage.online/percentage-increase" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Percentage Increase",
+    description: "Step-by-step guide to calculating the percentage increase between two numbers.",
+    step: [
+      { "@type": "HowToStep", name: "Find the difference", text: "Subtract the original value from the new value: New Value − Original Value." },
+      { "@type": "HowToStep", name: "Divide by the original value", text: "Divide the difference by the original value." },
+      { "@type": "HowToStep", name: "Multiply by 100", text: "Multiply the result by 100 to convert to a percentage." },
+    ],
+  },
 ];
 
 export default function PercentageIncreasePage() {
   return (
     <>
+      {schemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

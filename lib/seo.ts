@@ -15,6 +15,7 @@ export function createMetadata({
   return {
     title,
     description,
+    robots: { index: true, follow: true },
     alternates: { canonical: url },
     openGraph: {
       title,
@@ -22,6 +23,12 @@ export function createMetadata({
       url,
       siteName: "FastPercentage",
       type: "website",
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
     },
   };
 }

@@ -5,8 +5,9 @@ import DecreaseCalculator from "@/components/DecreaseCalculator";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
 export const metadata: Metadata = createMetadata({
-  title: "Percentage Decrease Calculator | FastPercentage",
-  description: "Calculate percentage decrease between two values instantly.",
+  title: "Percentage Decrease Calculator – Calculate % Decrease Online",
+  description:
+    "Free percentage decrease calculator. Enter two values and instantly find the % decrease between them. Formula: ((Old − New) ÷ Old) × 100. Fast and accurate.",
   path: "/percentage-decrease",
 });
 
@@ -25,11 +26,48 @@ const faqs = [
     q: "How do you calculate decrease from two values?",
     a: "Subtract the new value from the original value, divide by the original value, then multiply by 100.",
   },
+  {
+    q: "What is the formula for percentage decrease?",
+    a: "The formula is: Percentage Decrease = ((Original Value − New Value) ÷ Original Value) × 100.",
+  },
+  {
+    q: "Can a percentage decrease be more than 100%?",
+    a: "No. A 100% decrease means the value reaches zero. You cannot decrease something by more than 100% of itself.",
+  },
+  {
+    q: "What is the difference between percentage decrease and absolute decrease?",
+    a: "Absolute decrease is the raw difference (e.g. 100 − 80 = 20). Percentage decrease expresses that difference as a percentage of the original value (e.g. 20%).",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://fastpercentage.online" },
+      { "@type": "ListItem", position: 2, name: "Percentage Decrease Calculator", item: "https://fastpercentage.online/percentage-decrease" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Percentage Decrease",
+    description: "Step-by-step guide to calculating the percentage decrease between two numbers.",
+    step: [
+      { "@type": "HowToStep", name: "Find the difference", text: "Subtract the new value from the original value: Original Value − New Value." },
+      { "@type": "HowToStep", name: "Divide by the original value", text: "Divide the difference by the original value." },
+      { "@type": "HowToStep", name: "Multiply by 100", text: "Multiply the result by 100 to convert to a percentage." },
+    ],
+  },
 ];
 
 export default function PercentageDecreasePage() {
   return (
     <>
+      {schemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

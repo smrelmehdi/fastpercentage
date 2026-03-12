@@ -9,7 +9,7 @@ import AdPlaceholder from "@/components/AdPlaceholder";
 export const metadata: Metadata = createMetadata({
   title: "Percentage Calculator – Increase, Decrease & Discount Calculator",
   description:
-    "Free percentage calculator to calculate percentage increase, decrease, discounts and percentage values instantly online.",
+    "Free online percentage calculator. Calculate percentage increase, decrease, discounts and find what percent one number is of another. Fast and accurate.",
   path: "",
 });
 
@@ -54,19 +54,27 @@ const toolCards = [
 const faqs = [
   {
     q: "What is a percentage?",
-    a: "A percentage is a value expressed out of 100.",
+    a: "A percentage is a number or ratio expressed as a fraction of 100, denoted using the percent sign '%'. For example, 45% means 45 out of every 100.",
   },
   {
     q: "How do you calculate percentage increase?",
-    a: "Percentage increase = ((new value - original value) ÷ original value) × 100",
+    a: "Percentage increase = ((new value − original value) ÷ original value) × 100. For example, going from 80 to 100 is a 25% increase.",
   },
   {
     q: "How do you calculate percentage decrease?",
-    a: "Percentage decrease = ((original value - new value) ÷ original value) × 100",
+    a: "Percentage decrease = ((original value − new value) ÷ original value) × 100. For example, going from 100 to 80 is a 20% decrease.",
   },
   {
     q: "How do you calculate a discount percentage?",
-    a: "Discount percentage = ((original price - sale price) ÷ original price) × 100",
+    a: "Discount percentage = ((original price − sale price) ÷ original price) × 100. For example, a $20 discount on a $100 item is a 20% discount.",
+  },
+  {
+    q: "How do you find what percent one number is of another?",
+    a: "Divide the part by the whole, then multiply by 100. For example, 30 is what percent of 150? (30 ÷ 150) × 100 = 20%.",
+  },
+  {
+    q: "How do you calculate X% of a number?",
+    a: "Multiply the number by the percentage and divide by 100. For example, 15% of 200 = (15 × 200) ÷ 100 = 30.",
   },
 ];
 
@@ -77,6 +85,17 @@ function jsonLd() {
       "@type": "WebSite",
       name: "FastPercentage",
       url: "https://fastpercentage.online",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "Percentage Calculator",
+      url: "https://fastpercentage.online",
+      description:
+        "Free online percentage calculator for increase, decrease, discounts and more.",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     },
     {
       "@context": "https://schema.org",
