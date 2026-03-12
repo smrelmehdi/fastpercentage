@@ -2,6 +2,9 @@
 import { useState } from "react";
 
 export default function MobileAnchorAd() {
+  // Hidden until AdSense verification is complete
+  return null;
+
   const [dismissed, setDismissed] = useState(false);
 
   if (dismissed) return null;

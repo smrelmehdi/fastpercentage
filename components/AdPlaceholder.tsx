@@ -3,6 +3,8 @@ interface AdPlaceholderProps {
 }
 
 export default function AdPlaceholder({ variant = "responsive" }: AdPlaceholderProps) {
+  // Hidden until AdSense verification is complete
+  return null;
   if (variant === "rectangle") {
     return (
       <div className="my-10 flex justify-center">
